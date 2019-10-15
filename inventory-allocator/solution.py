@@ -108,12 +108,12 @@ def main():
     # Test8
     order = {"apple": 10, "orange": 6, "mango": 5}
     inventory = [{"name": "owd",
-                  "inventory": {"apple": 2, "orange": 6, "mango": 5}}, {
-        'name': 'dm', 'inventory': {'apple': 12, "orange": 3}}]
+                  "inventory": {"apple": 8, "orange": 6, "mango": 5}}, {
+        'name': 'dm', 'inventory': {'apple': 10, "orange": 3}}]
     test = InventoryAllocator(order, inventory)
     assert(test.cheapest_shipment() == [
-           {'owd': {'apple': 2, 'orange': 6, 'mango': 5}},
-           {'dm': {'apple': 8}}])
+           {'owd': {'apple': 8, 'orange': 6, 'mango': 5}},
+           {'dm': {'apple': 2}}])
 
     # Test9
     order = {"apple": 10, "orange": 6, "mango": 5}
@@ -121,6 +121,8 @@ def main():
     test = InventoryAllocator(order, inventory)
     assert(test.cheapest_shipment() == [])
     print("All Tests Passed")
+
+
 
 
 if __name__ == '__main__':
